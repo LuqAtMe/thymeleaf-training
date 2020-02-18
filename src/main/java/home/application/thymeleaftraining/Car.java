@@ -1,16 +1,25 @@
 package home.application.thymeleaftraining;
 
 public class Car {
-
-    String mark;
-    String model;
+    private long id;
+    private String mark;
+    private String model;
 
     public Car() {
     }
 
-    public Car(String mark, String model) {
+    public Car(long id, String mark, String model) {
+        this.id = id;
         this.mark = mark;
         this.model = model;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getMark() {
@@ -32,7 +41,8 @@ public class Car {
     @Override
     public String toString() {
         return "Car{" +
-                "mark='" + mark + '\'' +
+                "id=" + id +
+                ", mark='" + mark + '\'' +
                 ", model='" + model + '\'' +
                 '}';
     }

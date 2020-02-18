@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+</head>
+<body>
+Update Car Form
+<form th:action="@{/addCar}" th:object="${car}" method="post">
+    <br><br>
+    Id: <input type="number" th:field="*{id}"><br>
+    Mark: <input type="text" th:field="*{mark}"><br>
+    Model: <input type="text" th:field="*{model}"><br>
+    <input type="submit" value="Add new Car"><br>
+</form>
+<br>
+
+</body>
+</html>

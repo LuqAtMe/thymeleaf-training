@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+</head>
+<body>
+Add Car Form
+<form th:action="@{/addCar}" th:object="${car}" method="post">
+    <br><br>
+    Id: <input type="number" th:field="*{id}"><br>
+    Mark: <input type="text" th:field="*{mark}"><br>
+    Model: <input type="text" th:field="*{model}"><br>
+    <input type="submit" value="Add new Car"><br>
+</form>
+<br>
+Delete Car Form
+<form th:action="@{/deleteCar}" th:object="${car}" method="post">
+    <br><br>
+    Id: <input type="number" th:field="*{id}"><br>
+    <input type="submit" value="Remove Selected Car"><br>
+</form>
+<br>
+Update Car Form
+<form th:action="@{/addCar}" th:object="${car}" method="post">
+    <br><br>
+    Id: <input type="number" th:field="*{id}"><br>
+    Mark: <input type="text" th:field="*{mark}"><br>
+    Model: <input type="text" th:field="*{model}"><br>
+    <input type="submit" value="Add new Car"><br>
+</form>
+<br>
+<tr th:each="car: ${allCars}">
+    <td th:text="${car.getId()}"></td>
+    <td th:text="${car.getMark()}"></td>
+    <td th:text="${car.getModel()}"></td>
+    <br>
+</tr>
+
+</body>
+</html>
